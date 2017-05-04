@@ -1,6 +1,10 @@
 package conllection;
 
 import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+
 
 
 public class HashMapNote {
@@ -11,7 +15,15 @@ public class HashMapNote {
 	 * threshold = tableSizeFor(initialCapacity);  幂运算      - - 移位或运算 
 	 * 
 	 */
-	public static void main(String[] args) {
-		HashMap map = new HashMap();
-	} 
+	
+	@Test
+	public void initMap() {
+		Map<Integer,Integer> m = new HashMap<Integer,Integer>(10); 
+		m.put(1, 1);
+		System.out.println(m.size());
+
+		Map<Integer,Integer> m2 = new HashMap<Integer,Integer>(1); 
+		m2.put(1, 1);
+		System.out.println(m.size());
+	}
 }
