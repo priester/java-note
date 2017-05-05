@@ -12,11 +12,13 @@ import uitls.ClassUtils;
  * 那怎么办呢？不用愁，女娲，神仙呀，造出来呀，然后捏泥巴，放八卦炉（后来这个成了太白金星的宝 贝）中烤，于是就有了人：
  * 我们把这个生产人的过程用Java程序表现出来：
  */
+@SuppressWarnings("all")
 public class HumanFactory {
 
 	private static HashMap<String, Human> humans = new HashMap<String, Human>();
 
 	// 定一个烤箱，泥巴塞进去，人就出来，这个太先进了
+	
 	public static Human createHuman(Class c) {
 		Human human = null; // 定义一个类型的人类
 		try {
