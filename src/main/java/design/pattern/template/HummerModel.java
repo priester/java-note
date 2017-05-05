@@ -5,17 +5,19 @@ package design.pattern.template;
  */
 public abstract class HummerModel {
 
+	private boolean alarmFlag = true; // 是否要响喇叭
+
 	// 首先，这个模型要能够被发动起来，别管是手摇发动，还是电力发动，反正 是要能够发动起来，那这个实现要在实现类里了
-	public abstract void start();
+	protected abstract void start();
 
 	// 能发动，那还要能停下来，那才是真本事
-	public abstract void stop();
+	protected abstract void stop();
 
 	// 喇叭会出声音，是滴滴叫，还是哔哔叫
-	public abstract void alarm();
+	protected abstract void alarm();
 
 	// 引擎会轰隆隆的响，不响那是假的
-	public abstract void engineBoom();
+	protected abstract void engineBoom();
 
 	// 那模型应该会跑吧，别管是人推的，还是电力驱动，总之要会跑
 	public void run() {
@@ -24,8 +26,19 @@ public abstract class HummerModel {
 		// 引擎开始轰鸣
 		this.engineBoom();
 		// 然后就开始跑了，跑的过程中遇到一条狗挡路，就按喇叭
-		this.alarm();
+		if (this.isAlarmFlag()) {
+			this.alarm();
+		}
 		// 到达目的地就停车
 		this.stop();
 	}
+
+	public boolean isAlarmFlag() {
+		return alarmFlag;
+	}
+
+	public void setAlarmFlag(boolean alarmFlag) {
+		this.alarmFlag = alarmFlag;
+	}
+
 }
