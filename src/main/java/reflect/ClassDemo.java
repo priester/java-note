@@ -2,12 +2,20 @@ package reflect;
 
 import java.lang.reflect.Method;
 
+/**
+ * 任何类都是是Class的对象
+ * @author fany
+ *
+ */
 public class ClassDemo {
 
 	public static void initClass() {
+		
 		ClassDemo demo = new ClassDemo();
+		//class创建
 		Class<?> c1 = ClassDemo.class;
 		Class<?> c2 = demo.getClass();
+		
 		Class<?> c3 = null;
 		try {
 			c3 = Class.forName("reflect.ClassDemo");
@@ -20,6 +28,10 @@ public class ClassDemo {
 		System.out.println(c1 == c3);
 	}
 
+	/**
+	 * 打印方法
+	 * @param o
+	 */
 	public void printMethodMassege(Object o) {
 		Class<?> c1 = o.getClass();
 		Method[] methods = c1.getMethods();
@@ -36,11 +48,22 @@ public class ClassDemo {
 	}
 
 	public static void main(String[] args) {
-		ClassDemo demo = new ClassDemo();
+//		ClassDemo demo = new ClassDemo();
+		
 		String s = "123";
 		// demo.printMethodMassege(s);
 
 		Class<?> c = ClassDemo.class;
+		ClassDemo demo = null;
+		try {
+			demo = (ClassDemo)c.newInstance();
+		} catch (InstantiationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		Method m = null;
 		try {
 			// 先获取相应的method对象
