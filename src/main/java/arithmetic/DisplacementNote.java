@@ -35,4 +35,12 @@ public class DisplacementNote {
 		System.out.println(Integer.toBinaryString(i));
 		System.out.println(i);
 	}
+
+	@Test
+	public void test2() {
+		Long  period = -444444444444444444L;
+		if (Math.abs(period) > (Long.MAX_VALUE >> 1))
+			period >>= 1;
+		System.out.println(period);
+	}
 }

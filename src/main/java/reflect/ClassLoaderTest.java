@@ -23,6 +23,5 @@ public class ClassLoaderTest {
 			cl = cl.getParent();
 		}
 		System.out.println(cl);
-		
 	}
 }
