@@ -1,4 +1,4 @@
-package uitls;
+package reflect;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,8 +8,6 @@ import java.util.Enumeration;
 import java.util.List;
 
 /**
- * @author cbf4Life cbf4life@126.com I'm glad to share my knowledge with you
- *         all.
  * 
  */
 @SuppressWarnings("all")

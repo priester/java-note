@@ -10,7 +10,6 @@ public class QuickSort implements BaseSort {
 		this.list = list;
 	}
 
-	@Override
 	public void sortAsc() {
 		sort(0, list.size() - 1);
 	}
