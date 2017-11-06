@@ -4,12 +4,16 @@ import java.io.UnsupportedEncodingException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 /**
  * 中文判断
  * @author fany
  *
  */
 public class Chinese {
+	
+	private  static Logger logger = Logger.getLogger(Chinese.class);
 
 	public static boolean isContainChineseByByte(String s) {
 
@@ -45,6 +49,7 @@ public class Chinese {
 		System.out.println(isContainChineseByByte(s1));
 		System.out.println(isContainChineseByByte(s2));
 		System.out.println(isContainChineseByByte(s3));
+		logger.info("123");
 	}
 
 	private static void printBatesLenth(String s1) {
@@ -52,8 +57,9 @@ public class Chinese {
 			System.out.println(s1.getBytes("UTF-8").length); 
 			System.out.println(s1.getBytes("GBK").length);
 			System.out.println(s1.getBytes().length);
+			
 		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 	}

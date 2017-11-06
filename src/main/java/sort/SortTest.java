@@ -8,7 +8,7 @@ public class SortTest {
 	
 
 	public static void main(String[] args) {
-		Integer[] num = {8,7,6,3};
+		Integer[] num = {1,2,3,4};
 		List<Integer> list = Arrays.asList(num);
 		Sort.newBaseSort(list,2).sortAsc();
 		Iterator<Integer> itr = list.iterator();
