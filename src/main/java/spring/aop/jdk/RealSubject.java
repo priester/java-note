@@ -1,6 +1,6 @@
 package spring.aop.jdk;
 
-public class RealSubject implements Subject {
+public class RealSubject implements Sub {
 
 	@Override
 	public void result() {
